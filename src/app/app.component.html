@@ -1,9 +1,9 @@
 <navbar SideClass="navbar navbar-toggleable-md navbar-light bg-primary amber accent-3">
-    <logo><a class="logo navbar-brand" href="#">Korystuvach.com</a></logo>
+    <logo><a routerLink="/" class="logo navbar-brand">Korystuvach.com</a></logo>
     <links>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                <a routerLink="/home" routerLinkActive="active" class="nav-link"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"><i class="fa fa-search fa-2x" aria-hidden="true"></i></a>
@@ -38,36 +38,11 @@
         </ul>
     </links>
 </navbar>
-  <!--Form without header-->
+
   <div class="container">
     <div class="row">
 
-        <div class="card">
-          <div class="card-block">
-
-            <!--Header-->
-            <div class="text-center">
-                <h3>Korystuvach</h3>
-            </div>
-            <!--Body-->
-            <div class="md-form">
-                <input mdbActive type="text" id="form3" class="form-control">
-                <label for="form3">Your name</label>
-            </div>
-
-            <div class="md-form">
-                <input mdbActive type="password" id="form2" class="form-control">
-                <label for="form2">Your email</label>
-            </div>
-
-            <div class="text-center">
-                <button class="btn btn-deep-orange" ripple-radius>Send</button>
-            </div>
-
-          </div>
-        </div>
+        <router-outlet></router-outlet>
 
     </div>
-  </div>
-<!--/Form without header-->
-
+</div>

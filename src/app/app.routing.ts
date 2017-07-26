@@ -1,15 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
-
-import { MDBBootstrapModule } from './typescripts/angular-bootstrap-md/free';
-import { AgmCoreModule } from '@agm/core';
-
-import { AppRoutingModule } from './app.routing';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { PhotoComponent } from './pages/photo/photo.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -34,42 +24,33 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { CallbackComponent } from './pages/callback/callback.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
+const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
+  { path: 'registration', component: RegistrationComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'dialogs', component: DialogsListComponent},
+  { path: 'dialogs/:id', component: DialogComponent},
+  { path: 'subscription', component: SubscriptionComponent},
+  { path: 'events', component: EventsComponent},
+  { path: 'add-meeting', component: AddMeetingComponent},
+  { path: 'add-photoes', component: AddPhotoComponent},
+  { path: 'add-reminder', component: AddReminderComponent},
+  { path: 'edit-profile', component: EditProfileComponent},
+  { path: 'change-password', component: ChangePasswordComponent},
+  { path: 'callback', component: CallbackComponent},
+  { path: 'add-reminder', component: AddReminderComponent},
+  { path: ':login', component: UserComponent},
+  { path: ':login/meeting/:id', component: MeetingComponent},
+  { path: ':login/photo/:id', component: PhotoComponent},
+  { path: '**', component: NotFoundComponent},
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    PhotoComponent,
-    LoginComponent,
-    RegistrationComponent,
-    UserComponent,
-    HomeComponent,
-    SearchUserComponent,
-    SearchPhotoComponent,
-    SearchMeetingComponent,
-    DialogsListComponent,
-    DialogComponent,
-    SubscriptionComponent,
-    EventsComponent,
-    MeetingComponent,
-    AddMeetingComponent,
-    AddPhotoComponent,
-    AddReminderComponent,
-    EditProfileComponent,
-    HeaderComponent,
-    FooterComponent,
-    ChangePasswordComponent,
-    CallbackComponent,
-    NotFoundComponent,
-  ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
-    MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  exports: [RouterModule],
+  declarations: []
 })
-export class AppModule { }
+export class AppRoutingModule { }
