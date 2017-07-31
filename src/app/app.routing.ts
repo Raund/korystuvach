@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent},
   { path: 'change-password', component: ChangePasswordComponent},
   { path: 'callback', component: CallbackComponent},
+  { path: 'search-user', component: SearchUserComponent},
   { path: 'add-reminder', component: AddReminderComponent},
   { path: ':login', component: UserComponent},
   { path: ':login/meeting/:id', component: MeetingComponent},

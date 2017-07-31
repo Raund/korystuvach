@@ -1,8 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "WhipsmartRegular";
+  src: url("./assets/fonts/WhipsmartRegular/WhipsmartRegular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/WhipsmartRegular/WhipsmartRegular.woff") format("woff"), url("./assets/fonts/WhipsmartRegular/WhipsmartRegular.ttf") format("truetype"); 
+}
+
+@font-face {
+  font-family: "WhipsmartBold";
+  src: url("./assets/fonts/WhipsmartBold/WhipsmartBold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/WhipsmartBold/WhipsmartBold.woff") format("woff"), url("./assets/fonts/WhipsmartBold/WhipsmartBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ArsenalBold";
+  src: url("./assets/fonts/ArsenalBold/ArsenalBold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/ArsenalBold/ArsenalBold.woff") format("woff"), url("./assets/fonts/ArsenalBold/ArsenalBold.ttf") format("truetype"); 
+}
+
+@font-face {
+  font-family: "ArsenalBoldItalic";
+  src: url("./assets/fonts/ArsenalBoldItalic/ArsenalBoldItalic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/ArsenalBoldItalic/ArsenalBoldItalic.woff") format("woff"), url("./assets/fonts/ArsenalBoldItalic/ArsenalBoldItalic.ttf") format("truetype"); 
+}
+
+@font-face {
+  font-family: "ArsenalItalic";
+  src: url("./assets/fonts/ArsenalItalic/ArsenalItalic.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/ArsenalItalic/ArsenalItalic.woff") format("woff"), url("./assets/fonts/ArsenalItalic/ArsenalItalic.ttf") format("truetype"); 
+}
+
+@font-face {
+  font-family: "ArsenalRegular";
+  src: url("./assets/fonts/ArsenalRegular/ArsenalRegular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/ArsenalRegular/ArsenalRegular.woff") format("woff"), url("./assets/fonts/ArsenalRegular/ArsenalRegular.ttf") format("truetype"); 
+}
+
 body{
-    color: #3f3f3f !important;
+    font-family: "WhipsmartRegular";
+}
+
+// Redefining MDB theme styles
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label{
+    color: gold;
+}
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]){
+    border-bottom: 1px solid gold;
+    box-shadow: 0 1px 0 0 gold;
 }
 .navbar.navbar-light .breadcrumb a, .navbar.navbar-light .nav-item a{
-        color: #3f3f3f;
-
+    color: #3f3f3f;
 }
+.nav-item{
+    margin-left: 10px;
+}
+.nav-item.dropdown{
+    margin-left: 10%;
+}
+.navbar-light form.r-search-form input[type=text] {
+    border-bottom: none;
+    padding-top: 7px;
+    padding-left: 25px;
+}
+.r-search-form{
+    width: 200px;
+}
+input[placeholder]          {color: #dfbe0c};
+input::-moz-placeholder     {color: #dfbe0c}; 
+input:-moz-placeholder      {color: #dfbe0c}; 
+input:-ms-input-placeholder {color: #dfbe0c};   
+// Redefining MDB theme styles
