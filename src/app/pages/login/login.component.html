@@ -1,30 +1,128 @@
-<p>
-  login works!
-</p>
-<!--Form without header-->
-<div class="card">
-  <div class="card-block">
+<div class="container">
 
-    <!--Header-->
-    <div class="text-center">
-        <h3>Korystuvach</h3>
-    </div>
-    <!--Body-->
-    <div class="md-form">
-        <input mdbActive type="text" id="form3" class="form-control">
-        <label for="form3">Your name</label>
-    </div>
+  <div class="page-login">
 
-    <div class="md-form">
-        <input mdbActive type="password" id="form2" class="form-control">
-        <label for="form2">Your email</label>
-    </div>
+    <div class="row">
 
-    <div class="text-center">
-        <button class="btn btn-deep-orange" ripple-radius>Send</button>
+      <div class="offset-sm-1"></div>
+
+      <div class="col-sm-10 col-md-5">
+
+        <div class="main-img-wrap">
+            <img src="../../../assets/img/phones.png" alt="">
+        </div>
+
+      </div>
+
+      <div class="col-sm-10 col-md-5">
+        <!--Form without header-->
+        <div class="card r-card">
+          <div class="card-block r-card-block">
+
+            <!--Header-->
+            <div class="text-center">
+                <h3>KORYSTUVACH</h3>
+            </div>
+            <!--Body-->
+            <div class="md-form">
+                <input mdbActive type="text" id="login" class="form-control r-form-control">
+                <label for="login">Логін</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive type="password" id="pass" class="form-control r-form-control">
+                <label for="pass">Пароль</label>
+            </div>
+
+            <div class="text-center">
+                <h5 class="forgot-pass" (click)="basicModal.show()">Забули пароль?</h5>
+            </div>
+
+            <div bsModal #basicModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer flex-column">
+                            <button type="button" class="btn btn-secondary ml-auto" aria-label="Close" (click)="basicModal.hide()" ripple-radius>Close</button>
+                            <button md-ripple  type="button" class="btn btn-primary relative ml-auto" ripple-radius>Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+            <button class="btn r-btn-outline-gold" ripple-radius>Увійти</button>
+
+            <div class="text-center">
+              <h5>Увійти через</h5>
+              <ul class="soc-enter">
+                <li class="soc-enter_item">
+                  <a href="#" class="soc-enter_nav">
+                    <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="soc-enter_item">
+                  <a href="#" class="soc-enter_nav">
+                    <i class="fa fa-vk fa-3x" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="soc-enter_item">
+                  <a href="#" class="soc-enter_nav">
+                    <i class="fa fa-odnoklassniki-square fa-3x" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+              <h5>Немає облікового запису?</h5>
+
+              <a routerLink="/registration" class="btn r-btn-outline-gold" ripple-radius>Реєстрація</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="text-center download-block">
+          <h5>Встановити додаток</h5>
+          <ul class="download-list">
+            <li class="download-list_item">
+              <a href="#" class="download-list_nav">
+                <i class="fa fa-android fa-4x" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="download-list_item">
+              <a href="#" class="download-list_nav">
+                <i class="fa fa-apple fa-4x" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="download-list_item">
+              <a href="#" class="download-list_nav">
+                <i class="fa fa-windows fa-4x" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="offset-sm-1"></div>
+
     </div>
 
   </div>
+
 </div>
+
+  <!-- <li *ngFor="let user of users">
+    <span>{{user.id}}</span> {{user.name}}
+  </li> -->
+
 <!--/Form without header-->
 

@@ -1,0 +1,102 @@
+.main-img-wrap{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    > img{
+        max-width: 110%;
+    }
+}
+.r-btn-outline-gold{
+    width: 100%;
+    margin: 0;
+    padding: 6px 0;
+    border: 3px solid #ffd800;
+    color: #3f3f3f !important;
+    background-color: transparent;
+    font-family: "Tahoma";
+    font-size: 18px;
+    text-transform: none;
+}
+.page-login{
+    margin-top: 5%;
+}
+.r-card{
+    position: relative;
+    left: -5px;
+    margin-top: 40px;
+    font-family: "WhipsmartBold";
+    &-block{
+        margin: 45px 20%;
+        padding: 0;
+        h5{
+            margin: 20px 0;
+            &.forgot-pass{
+                display: inline-block;
+                margin-top: 0;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .fa-facebook-square{
+        color: #3364a3;
+    }
+    .fa-vk{
+        color:#2d76a6;
+    }
+    .fa-odnoklassniki-square{
+        color: #ff8829;
+    }
+}
+.r-form-control{
+    margin: 0;
+    padding: 8px 0;
+}
+.soc-enter{
+    &_item{
+        display: inline-block;
+        margin-left: 25px;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}
+.download{
+    &-block{
+        margin-top: 40px;
+        h5{
+            margin: 20px 0;
+        }
+        .fa-android{
+            color: #93cb1e;
+        }
+        .fa-apple{
+            color:#171717;
+        }
+        .fa-windows{
+            color: #00aff2;
+        }
+    }
+    &-list{
+        &_item{
+            display: inline-block;
+            margin-left: 25px;
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label{
+    color: gold;
+}
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]){
+    border-bottom: 1px solid gold;
+    box-shadow: 0 1px 0 0 gold;
+}
+

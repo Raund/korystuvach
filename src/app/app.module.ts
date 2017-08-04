@@ -11,6 +11,9 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app.routing';
 
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 import { PhotoComponent } from './pages/photo/photo.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
@@ -28,11 +31,11 @@ import { AddMeetingComponent } from './pages/add-meeting/add-meeting.component';
 import { AddPhotoComponent } from './pages/add-photo/add-photo.component';
 import { AddReminderComponent } from './pages/add-reminder/add-reminder.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { HeaderComponent } from './blocks/header/header.component';
-import { FooterComponent } from './blocks/footer/footer.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+import { UsersService } from './blocks/users.service';
 
 @NgModule({
   declarations: [
@@ -54,8 +57,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AddPhotoComponent,
     AddReminderComponent,
     EditProfileComponent,
-    HeaderComponent,
-    FooterComponent,
     ChangePasswordComponent,
     CallbackComponent,
     NotFoundComponent,
@@ -66,9 +67,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FormsModule,
     HttpModule,
     MDBBootstrapModule.forRoot(),
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

@@ -18,8 +18,6 @@ import { AddMeetingComponent } from './pages/add-meeting/add-meeting.component';
 import { AddPhotoComponent } from './pages/add-photo/add-photo.component';
 import { AddReminderComponent } from './pages/add-reminder/add-reminder.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { HeaderComponent } from './blocks/header/header.component';
-import { FooterComponent } from './blocks/footer/footer.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
