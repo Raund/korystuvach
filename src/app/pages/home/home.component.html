@@ -1,15 +1,32 @@
-<p>
-  main works!
-</p>
-<!-- <div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in with Angular 2!!</p>
-    <h3>All registered users:</h3>
-    <ul>
-        <li *ngFor="let user of users">
-            {{user.username}} ({{user.firstName}} {{user.lastName}})
-            - <a (click)="deleteUser(user.id)">Delete</a>
-        </li>
-    </ul>
-    <p><a [routerLink]="['/login']">Logout</a></p>
-</div> -->
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-body">
+                    <h2 class="card-title r-card-title text-center">Список зустрічей</h2>
+                    <div class="col-md-4">
+                        <div class="card meeting-card">
+                            <div class="r-card-header">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a class="ava" routerLink="/user" style="background-image: url('../../../assets/img/ava.jpg')"></a>
+                                    </div>
+                                    <div class="col-8">
+                                        <p class="user-name-wrap text-left"><a class="user-name" routerLink="/login">Olga123</a></p>                           
+                                        <p class="user-name-wrap text-right"><a class="meeting-name" routerLink="/login/meeting">Пікнік у парку</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="view hm-white-slight waves-light" mdbRippleRadius>
+                                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+                                <a>
+                                    <div class="mask"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

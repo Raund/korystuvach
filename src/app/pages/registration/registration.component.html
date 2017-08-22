@@ -1,3 +1,103 @@
-<p>
-  registration works!
-</p>
+<div class="container">
+
+  <div class="page-login">
+
+    <div class="row">
+
+      <div class="offset-sm-1"></div>
+
+      <div class="col-sm-10 col-md-5">
+
+        <div class="main-img-wrap">
+            <img src="../../../assets/img/phones.png" alt="">
+        </div>
+
+      </div>
+
+      <div class="col-sm-10 col-md-5">
+        <!--Form without header-->
+        <div class="card r-card">
+          <div class="card-block r-card-block">
+
+            <!--Header-->
+            <div class="text-center">
+                <h3>KORYSTUVACH</h3>
+                <div class="r-text">Реєструйтеся для простого створення зустрічей з друзями</div>
+            </div>
+            <!--Body-->
+            <div class="md-form">
+                <input mdbActive type="text" #email id="email" class="form-control r-form-control">
+                <label for="email">Моб.телефон або e-mail</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive type="text" #name id="name" class="form-control r-form-control">
+                <label for="name">Повне імя</label>
+            </div>
+
+            <div class="md-form">
+              <select id="city" #city class="r-select" size="1">
+                  <option disabled selected>Місто</option>
+                  <option value="Чебурашка">Чебурашка</option>
+                  <option value="Крокодил Гена">Крокодил Гена</option>
+                  <option value="Шапокляк">Шапокляк</option>
+                  <option value="Крыса Лариса">Крыса Лариса</option>
+              </select>                
+            </div>
+
+            <div class="md-form">
+                <input mdbActive type="text" #login id="login" class="form-control r-form-control">
+                <label for="login">Логін</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive type="password" #pass1 id="pass1" class="form-control r-form-control">
+                <label for="pass1">Пароль</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive type="password" #pass2 id="pass2" class="form-control r-form-control">
+                <label for="pass2">Повторити пароль</label>
+            </div>
+            
+            <div class="r-text text-center">Я погоджуюсь з умовами користування та політикою конфіденційності</div>
+
+            <button (click)="registration(email.value, name.value, city.value, login.value, pass1.value, pass2.value)" type="submit" class="btn r-btn-outline-gold" ripple-radius>Зареєструватись</button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div bsModal #errorPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header r-modal-header">
+                      <button type="button" class="close pull-right" aria-label="Close" (click)="errorPassModal.hide()">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                      <h4 class="modal-title r-modal-title w-100" id="myModalLabel">Повідомлення</h4>
+                  </div>
+                  <div class="modal-body r-modal-body text-center">
+                    <div class="r-modal-text">Пароль введено невірно.Спробуйте ще раз або скористайтеся формою відновлення паролю</div>
+                      <button type="button" class="btn r-btn-outline-gold" aria-label="Close" (click)="errorPassModal.hide()" ripple-radius>OK</button>
+                    </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="offset-sm-1"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- <li *ngFor="let user of users">
+    <span>{{user.id}}</span> {{user.name}}
+  </li> -->
+
+<!--/Form without header-->
+

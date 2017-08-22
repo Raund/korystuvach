@@ -11,8 +11,8 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app.routing';
 
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 
 import { PhotoComponent } from './pages/photo/photo.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -36,6 +36,8 @@ import { CallbackComponent } from './pages/callback/callback.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { UsersService } from './blocks/users.service';
+import { AuthenticationService } from './blocks/authentication.service';
+import { RegistrationService } from './blocks/registration.service';
 
 @NgModule({
   declarations: [
@@ -67,10 +69,10 @@ import { UsersService } from './blocks/users.service';
     FormsModule,
     HttpModule,
     MDBBootstrapModule.forRoot(),
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, AuthenticationService, RegistrationService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

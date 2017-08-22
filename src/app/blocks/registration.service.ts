@@ -9,31 +9,18 @@ import 'rxjs/add/operator/toPromise';
 import { User } from './user';
 
 @Injectable()
-export class UsersService {
+export class RegistrationService {
 
   private usersUrl = 'api/users';
-  private serverUrl = 'http://192.168.0.17:3000/users/login';  
+  private serverUrl = 'http://192.168.0.17:3000/users/register';
   private headers = new Headers(
     {'Access-Control-Allow-Origin': 'http://localhost:4200'});
 
   constructor(private http: Http) {}
 
-  getUsers(): Promise<User[]> {
-    return this.http.get(this.usersUrl)
-      .toPromise()
-      .then(response => response.json().data as User[])
-      .catch(this.handlerError);
-  }
-
-  checkUser(term: string): Observable<User[]> {
+  registration(email, name, city, login, pass1, pass2) {
     return this.http
-    .get(`api/users/?name=${term}`)
-    .map(response => response.json().data as User[]);
-  }
-
-  login(email, password) {
-    return this.http
-      .post(this.serverUrl, {username: email, password: password}, {headers: this.headers})
+      .post(this.serverUrl, {email: email, username: login, name: name,  city: city, password: pass1, telephone: '11111', password2: pass2}, {headers: this.headers})
       .toPromise()
       .then(res => console.log(res))
       .catch(this.handlerError);

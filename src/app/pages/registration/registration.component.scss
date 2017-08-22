@@ -1,0 +1,86 @@
+.main-img-wrap{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    > img{
+        max-width: 110%;
+    }
+}
+.r-btn-outline-gold{
+    width: 100%;
+    margin: 0;
+    padding: 6px 0;
+    border: 3px solid #ffd800;
+    color: #3f3f3f !important;
+    background-color: transparent;
+    font-family: "Tahoma";
+    font-size: 18px;
+    text-transform: none;
+}
+.page-login{
+    margin-top: 5%;
+}
+.r-card{
+    position: relative;
+    left: -5px;
+    margin-top: 40px;
+    font-family: "WhipsmartBold";
+    .md-form{
+        margin-bottom: 15px;
+    }
+    &-block{
+        margin: 25px 20%;
+        padding: 0;
+        h5{
+            margin: 20px 0;
+            &.forgot-pass{
+                display: inline-block;
+                margin-top: 0;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.r-form-control{
+    margin: 0;
+    padding: 8px 0;
+}
+.r-select{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-family: "WhipsmartBold";
+    font-size: 1rem;
+    color: #757575;
+    &:focus{
+        outline: 2px solid #ffd800;
+    }
+}
+.r-text{
+    margin-bottom: 15px;
+}
+h3 + .r-text{
+    margin-bottom: 15px;
+    font-family: "Whipsmart";
+}
+.md-form label.active {
+    -webkit-transform: translateY(-140%);
+    transform: translateY(-105%);
+}
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label{
+    color: gold;
+}
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]){
+    border-bottom: 1px solid gold;
+    box-shadow: 0 1px 0 0 gold;
+}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search-md], input[type=search], textarea.md-textarea{
+    height: 20px;
+}
+

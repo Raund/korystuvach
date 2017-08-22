@@ -1,65 +1,77 @@
 <div class="container">
-
   <div class="page-login">
-
     <div class="row">
-
       <div class="offset-sm-1"></div>
-
       <div class="col-sm-10 col-md-5">
-
         <div class="main-img-wrap">
             <img src="../../../assets/img/phones.png" alt="">
         </div>
-
       </div>
-
       <div class="col-sm-10 col-md-5">
-        <!--Form without header-->
         <div class="card r-card">
           <div class="card-block r-card-block">
 
-            <!--Header-->
             <div class="text-center">
                 <h3>KORYSTUVACH</h3>
             </div>
-            <!--Body-->
+
             <div class="md-form">
-                <input mdbActive type="text" id="login" class="form-control r-form-control">
+                <input #email (keyup)="checkUser(email.value)" mdbActive type="text" id="email" class="form-control r-form-control">
                 <label for="login">Логін</label>
+                <div *ngFor="let user of chekedUser | async"
+                  class="search-result" >
+                  {{user.name}}
+                </div>
             </div>
 
             <div class="md-form">
-                <input mdbActive type="password" id="pass" class="form-control r-form-control">
+                <input #password mdbActive type="password" id="password" class="form-control r-form-control">
                 <label for="pass">Пароль</label>
             </div>
-
+            
             <div class="text-center">
-                <h5 class="forgot-pass" (click)="basicModal.show()">Забули пароль?</h5>
+                <h5 class="forgot-pass" (click)="recoveryPassModal.show()">Забули пароль?</h5>
             </div>
 
-            <div bsModal #basicModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+            <button (click)="login(email.value, password.value)" type="submit" class="btn r-btn-outline-gold" ripple-radius>Увійти</button>            
+
+            <div bsModal #recoveryPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                        <div class="modal-header r-modal-header">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="recoveryPassModal.hide()">
                                 <span aria-hidden="true">×</span>
                             </button>
-                            <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                            <h4 class="modal-title r-modal-title w-100" id="myModalLabel">Відновлення паролю</h4>
                         </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer flex-column">
-                            <button type="button" class="btn btn-secondary ml-auto" aria-label="Close" (click)="basicModal.hide()" ripple-radius>Close</button>
-                            <button md-ripple  type="button" class="btn btn-primary relative ml-auto" ripple-radius>Save changes</button>
+                        <div class="modal-body r-modal-body text-center">
+                            <div class="r-modal-text">Введіть електронний адрес для відновлення паролю</div>
+                          <div class="md-form">
+                            <input mdbActive type="text" id="restore-mail" class="form-control r-form-control">
+                            <label for="restore-mail">e-mail</label>
+                          </div>
+                          <button type="button" class="btn r-btn-outline-gold" aria-label="Відновити" (click)="recoveryPassModal.hide()" ripple-radius>Відновити</button>
                         </div>
                     </div>
                 </div>
             </div>
+            <div bsModal #errorPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header r-modal-header">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="errorPassModal.hide()">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title r-modal-title w-100" id="myModalLabel">Повідомлення</h4>
+                        </div>
+                        <div class="modal-body r-modal-body text-center">
+                          <div class="r-modal-text">Пароль введено невірно.Спробуйте ще раз або скористайтеся формою відновлення паролю</div>
+                            <button type="button" class="btn r-btn-outline-gold" aria-label="Close" (click)="errorPassModal.hide()" ripple-radius>OK</button>
+                          </div>
+                    </div>
+                </div>
+            </div>
        
-            <button class="btn r-btn-outline-gold" ripple-radius>Увійти</button>
-
             <div class="text-center">
               <h5>Увійти через</h5>
               <ul class="soc-enter">
@@ -111,7 +123,6 @@
         </div>
 
       </div>
-
       <div class="offset-sm-1"></div>
 
     </div>
