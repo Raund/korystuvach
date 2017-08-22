@@ -14,27 +14,41 @@
             <div class="text-center">
                 <h3>KORYSTUVACH</h3>
             </div>
+            <form (ngSubmit)="onSubmit()">
+              <div class="md-form">
+                  <input mdbActive type="text" id="email" minlength="3" class="form-control r-form-control" [(ngModel)]="model.email" name="email" required #email="ngModel">
+                  <label for="login">Логін</label>
+                  <div *ngIf="email.errors && (email.dirty || email.touched)">
+                    <div [hidden]="!email.errors.required" class="alert alert-danger">
+                        Login is required!
+                    </div>  
 
-            <div class="md-form">
-                <input #email (keyup)="checkUser(email.value)" mdbActive type="text" id="email" class="form-control r-form-control">
-                <label for="login">Логін</label>
-                <div *ngFor="let user of chekedUser | async"
-                  class="search-result" >
-                  {{user.name}}
-                </div>
-            </div>
+                    <div [hidden]="!email.errors.minlength" class="alert alert-danger">
+                        Must be 3 symbol!
+                    </div>  
 
-            <div class="md-form">
-                <input #password mdbActive type="password" id="password" class="form-control r-form-control">
-                <label for="pass">Пароль</label>
-            </div>
-            
-            <div class="text-center">
-                <h5 class="forgot-pass" (click)="recoveryPassModal.show()">Забули пароль?</h5>
-            </div>
+                  </div>
+              </div>
 
-            <button (click)="login(email.value, password.value)" type="submit" class="btn r-btn-outline-gold" ripple-radius>Увійти</button>            
+              <div class="md-form">
+                  <input mdbActive type="password" minlength="6" id="password" class="form-control r-form-control" [(ngModel)]="model.password" name="password" required #password="ngModel">
+                  <label for="password">Пароль</label>
 
+                    <div *ngIf="password.errors && (password.dirty || password.touched)">
+                      <div [hidden]="!password.errors.required" class="alert alert-danger">
+                          Password is required!
+                      </div>  
+                    </div>
+  
+              </div>
+              
+              <div class="text-center">
+                  <h5 class="forgot-pass" (click)="recoveryPassModal.show()">Забули пароль?</h5>
+              </div>
+
+              <button type="submit" class="btn r-btn-outline-gold" ripple-radius>Увійти</button>            
+            </form>
+            {{ currentForm }}
             <div bsModal #recoveryPassModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">

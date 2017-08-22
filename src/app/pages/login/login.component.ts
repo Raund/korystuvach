@@ -24,6 +24,7 @@ import { AuthenticationService } from '../../blocks/authentication.service';
 export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('errorPassModal') modal: any;
   users: User[];
+  model = {};
   chekedUser: Observable<User[]>;
   private searchTerms = new Subject<string>();
 
@@ -50,6 +51,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
       error => this.modal.show()
     );
   }
+
+  onSubmit() {
+    console.log(this.model);
+  }
+  // get currentForm() {
+  //   return JSON.stringify(this.model);
+  // }
 
   ngOnInit(): void {
       this.chekedUser = this.searchTerms
